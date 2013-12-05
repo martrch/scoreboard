@@ -1,0 +1,61 @@
+/* app css stylesheet */
+
+.team {
+    font-family: "team", Helvetica, Arial, sans-serif;
+    font-size: 60pt;
+    font-weight: bold;
+}
+
+.sc {
+    width: 100%;
+    font-size: 140pt;
+    font-family: "time", Helvetica, Arial, sans-serif;
+    padding-left:  50px;
+    padding-top: 100px;
+}
+
+.score1 {
+    float: left;
+    text-align: left;
+    width: 50%;
+}
+
+.score2 {
+    float: rigth;
+    text-align: right;
+    margin-right: 100px;
+
+}
+body {
+    background-image: url('bg_1.jpg');
+    background-size: cover; /* width and height, can be %, px or whatever. */
+background-repeat:no-repeat;
+overflow: hidden;
+
+}
+
+.time {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 140pt;
+    font-family: "time", Helvetica, Arial, sans-serif;
+
+}
+
+.quater {
+    width: 100%;
+    text-align: center;
+    font-size: 70pt;
+    font-family: "time", Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+    font-family: "time";
+    src: url('time.ttf');
+}
+
+@font-face {
+    font-family: "team";
+    src: url('team.ttf');
+}
