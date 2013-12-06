@@ -4,9 +4,9 @@ var qt = ["1st", "2nd", "3rd", "4th", "ot"];
 function scController($scope, $http, $rootScope) {
     $scope.running = false;
 
-    $scope.time = 900;
+    $scope.time = 720;
     $scope.secw = '00';
-    $scope.minw = '15';
+    $scope.minw = '12';
 
     $scope.qt = 0;
     $scope.qtw = qt[0];
@@ -32,6 +32,7 @@ function scController($scope, $http, $rootScope) {
 
         if (key.keyIdentifier === 'U+0020') { //SPACE
             if ($scope.running == false) {
+				
                 $scope.timer = setInterval(function() {
                     $scope.decr()
                 }, 1000);
@@ -42,7 +43,7 @@ function scController($scope, $http, $rootScope) {
             $scope.running = !$scope.running;
         }
 
-        if (key.keyIdentifier === 'Up' && $scope.time < 895) {
+        if (key.keyIdentifier === 'Up' && $scope.time < 715) {
             $scope.time += 6;
             $scope.decr();
         }
@@ -57,7 +58,7 @@ function scController($scope, $http, $rootScope) {
         if (key.keyIdentifier === 'Right' && $scope.qt < 4) {
             $scope.qtw = qt[++$scope.qt];
             if ($scope.time <= 0) {
-                $scope.time = 900;
+                $scope.time = 720;
                 $scope.decr();
             }
         }
