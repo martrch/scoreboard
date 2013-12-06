@@ -11,6 +11,13 @@ function scController($scope, $http, $rootScope) {
     $scope.qt = 0;
     $scope.qtw = qt[0];
 
+    $scope.to1 = 3;
+    $scope.to2 = 3;
+
+    $scope.to1w = "* * *"
+    $scope.to2w = "* * *"
+
+
     $scope.score2 = $scope.score1 = 0;
 
     $scope.decr = function() {
@@ -32,7 +39,7 @@ function scController($scope, $http, $rootScope) {
 
         if (key.keyIdentifier === 'U+0020') { //SPACE
             if ($scope.running == false) {
-				
+
                 $scope.timer = setInterval(function() {
                     $scope.decr()
                 }, 1000);
@@ -60,6 +67,9 @@ function scController($scope, $http, $rootScope) {
             if ($scope.time <= 0) {
                 $scope.time = 720;
                 $scope.decr();
+                if ($scope.qt == 2 || $scope.qt == 4)
+                    $scope.to2 = $scope.to1 = 3;
+                
             }
         }
 
@@ -73,7 +83,23 @@ function scController($scope, $http, $rootScope) {
         if (key.keyIdentifier === 'U+0053' && $scope.score2 > 0)
             $scope.score2--;
 
+        if (key.keyIdentifier === 'U+0057') {
+            $scope.to1--;
+            if ($scope.to1 < 0)
+                $scope.to1 = 3;
+        }
+        if (key.keyIdentifier === 'U+0058') {
+            $scope.to2--;
+            if ($scope.to2 < 0)
+                $scope.to2 = 3;
+            
+        }
+        $scope.majto();
     }
 
+    $scope.majto = function() {
+        $scope.to1w = $scope.to1 == 3 ? "* * *" : $scope.to1 == 2 ? "* *" : $scope.to1 == 1 ? "*" : "";
+        $scope.to2w = $scope.to2 == 3 ? "* * *" : $scope.to2 == 2 ? "* *" : $scope.to2 == 1 ? "*" : "";
+    }
 
 }

@@ -11,8 +11,18 @@
     font-size: 140pt;
     font-family: "time", Helvetica, Arial, sans-serif;
     padding-left:  50px;
-    padding-top: 100px;
+    padding-top: 20px;
 }
+
+.timeout {
+    font-size: 120pt;
+    font-weight: bolder;
+    margin-top: -20px;
+    margin-bottom: -30px;
+    color: #ffcc00;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
 
 .score1 {
     float: left;
@@ -24,7 +34,6 @@
     float: rigth;
     text-align: right;
     margin-right: 100px;
-
 }
 body {
     background-image: url('bg_1.jpg');
